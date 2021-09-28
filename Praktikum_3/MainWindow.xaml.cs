@@ -25,5 +25,11 @@ namespace Praktikum_3
         {
             InitializeComponent();
         }
+
+        protected override void OnActivated(EventArgs e)
+        {
+            base.OnActivated(e);
+            cmdFocus.Focus(); // Попытка установить фокус элементу управления.
+        }
     }
 }

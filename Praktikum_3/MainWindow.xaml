@@ -5,35 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
-        Title="ListBox Sample" Height="300" Width="300">
-    <!--Если в ListBox помещен объект производный от UIElement, то этот
-элемент визуализируется, иначе для объекта вызывается метод ToString() и
-полученная строка выводится как элемент списка
-SelectionMode - Режим выбора элементов в списке:
-Single - может быть выбран только один элемент.
-Multiple - может быть выбрано несколько элементов, при этом для того
-что бы произвести выбор или снять выбор нужно сделать левый клик по
-элементу.
-Extended - множественный выбор производится с зажатой клавишей Ctrl
-или Shift
- -->
-    <ListBox Margin="5"
- SelectionMode="Extended"
- Name="lst">
-        <StackPanel Orientation="Horizontal">
-            <Image Source="1.png" Width="100" Height="64" />
-            <Label VerticalContentAlignment="Center" Content="Первый рисунок"
-/>
+        Title="Focus" Height="231" Width="274">
+    <Grid>
+        <StackPanel Margin="5">
+            <Button Margin="5" Padding="30" Name="cmdFocus">Focused</Button>
+            <Button Margin="5" Padding="30">Not Focused</Button>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Image Source="2.png" Width="100" Height="64" />
-            <Label VerticalContentAlignment="Center" Content="Второй рисунок"
-/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Image Source="3.png" Width="100" Height="64" />
-            <Label VerticalContentAlignment="Center" Content="Третий рисунок"
-/>
-        </StackPanel>
-    </ListBox>
+    </Grid>
 </Window>
