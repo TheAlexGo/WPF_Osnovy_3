@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="190" Width="300">
+    <StackPanel Margin="5">
+        <!--
+ Label - предоставляет возможность фокусировки на элементах
+управления после нажатия на горячие клавиши.
+ Для фокусировки используются свойства Target и Content
+ Target – элемент, к которому будет происходить привязка
+ Content - текст и горячая клавиша (в комбинации с Alt) формат: "_x
+- _X".
+ -->
+        <Label Target="{Binding ElementName=txtA}" Content="Выбор _X" />
+        <TextBox Name="txtA" />
+        <Label Target="{Binding ElementName=txtB}" Content="Выбор _Y" />
+        <TextBox Name="txtB" />
+        <Label HorizontalAlignment="Center"
+ Margin="10"
+ Content="Нажмите кнопку alt + &quot;X&quot; или alt +
+&quot;Y&quot;" />
+        <!-- &quot; - используется для указания символа ". -->
+    </StackPanel>
 </Window>
