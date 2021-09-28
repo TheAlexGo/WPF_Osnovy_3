@@ -5,20 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
-       Title="Вариант 2. Менюшки" Height="300" Width="300">
+       Title="Вариант 3. Древушко" Height="300" Width="300">
     <Grid>
-        <Menu Height="22" VerticalAlignment="Top">
-            <MenuItem Header="File">
-                <MenuItem Header="New Project" ></MenuItem>
-                <MenuItem Header="Open Project" >
-                    <MenuItem Header="Моя любимая лаба №1"></MenuItem>
-                    <MenuItem Header="Моя любимая лаба №2" ></MenuItem>
-                </MenuItem>
-                <Separator />
-                <MenuItem Header="Exit" ></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Edit" ></MenuItem>
-            <MenuItem Header="View" ></MenuItem>
-        </Menu>
+        <TreeView>
+            <TextBox>Элемент TreeView</TextBox>
+            <TreeViewItem Header="Самые лучшие аниме">
+                <TreeViewItem Header="Госпожа Кагуя" />
+                <TreeViewItem Header="Токийский Гуль" />
+                <TreeViewItem Header="Атака Титанов" />
+                <TreeViewItem Header="Sword Art Online" />
+            </TreeViewItem>
+            <TreeViewItem Header="Языки программирования">
+                <TreeViewItem Header="Вложеннный список">
+                    <TreeViewItem Header="Элемент первый" />
+                    <TreeViewItem Header="Элемент второй" />
+                    <TreeViewItem Header="Элемент третий" />
+                </TreeViewItem>
+                <TreeViewItem Header="Лучшие ЯП (непредвзято, объективно)">
+                    <TreeViewItem Header="JavaScript" />
+                    <TreeViewItem Header="JavaScript" />
+                    <TreeViewItem Header="JavaScript" />
+                    <TreeViewItem Header="JavaScript" />
+                    <TreeViewItem Header="JavaScript" />
+                    <TreeViewItem Header="Python" />
+                    <TreeViewItem Header="C#" />
+                </TreeViewItem>
+            </TreeViewItem>
+        </TreeView>
     </Grid>
 </Window>
