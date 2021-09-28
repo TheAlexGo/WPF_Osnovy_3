@@ -24,22 +24,5 @@ namespace Praktikum_3
         {
             InitializeComponent();
         }
-
-        private void lst_SelectionChanged(object sender, RoutedEventArgs e)
-        {
-            if (e.OriginalSource is CheckBox)
-                lst.SelectedItem = e.OriginalSource;
-            txtSelection.Text = String.Format("Позиция {0}.\r\nСостояние {1}.",
-            lst.SelectedIndex,
-            ((CheckBox)lst.SelectedItem).IsChecked);
-        }
-        private void cmd_CheckAllItems(object sender, RoutedEventArgs e)
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (CheckBox item in lst.Items)
-                if (item.IsChecked == true)
-                    sb.AppendLine(item.Content + " отмечен. ");
-            txtSelection.Text = sb.ToString();
-        }
     }
 }

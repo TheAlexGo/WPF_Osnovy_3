@@ -6,28 +6,30 @@
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <!--CheckBox.Click - определение обработчика для всех элементов
-управления, которые находятся в ListBox
- SelectionChanged - обработчик на смену выделения элемента в
-ListBox
- -->
-        <ListBox Name="lst"
- SelectionChanged="lst_SelectionChanged"
- CheckBox.Click="lst_SelectionChanged">
-            <CheckBox Margin="3">Option 1</CheckBox>
-            <CheckBox Margin="3">Option 2</CheckBox>
-            <CheckBox Margin="3">Option 3</CheckBox>
-        </ListBox>
-        <StackPanel Grid.Row="1" Margin="0,10,0,0">
-            <TextBlock>Текущий выбор:</TextBlock>
-            <TextBlock Name="txtSelection" TextWrapping="Wrap"></TextBlock>
-            <Button Margin="0,10,0,0" Click="cmd_CheckAllItems">Проверить все
-элементы</Button>
+    <Grid>
+        <StackPanel>
+            <!--RadioButton по умолчанию группируется контейнерами, но
+также,
+ можно группировать эти элементы управления с помощью
+свойства GroupName-->
+            <GroupBox Margin="5" Padding="10" Header="Radiobutton Group 1">
+                <StackPanel>
+                    <RadioButton>Group 1</RadioButton>
+                    <RadioButton>Group 1</RadioButton>
+                    <RadioButton>Group 1</RadioButton>
+                    <RadioButton Margin="0,10,0,0"
+ GroupName="Group2">Group 2</RadioButton>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Margin="5" Padding="10" Header="Radiobutton Group 2">
+                <StackPanel>
+                    <RadioButton>Group 3</RadioButton>
+                    <RadioButton>Group 3</RadioButton>
+                    <RadioButton>Group 3</RadioButton>
+                    <RadioButton Margin="0,10,0,0"
+ GroupName="Group2">Group 2</RadioButton>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
     </Grid>
 </Window>
