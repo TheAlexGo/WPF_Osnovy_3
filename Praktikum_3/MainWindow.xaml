@@ -5,44 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
-       Title="Drag &amp; Drop" Height="300" Width="300">
-    <Grid Margin="5">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <TextBox Padding="10"
- VerticalAlignment="Center"
- HorizontalAlignment="Center"
- Text="Перетащите текст из этого поля ввода" />
-        <!--
- В TextBox уже реализовано Drag&Drop текста.
- -->
-        <Label Grid.Row="0"
- Grid.Column="1"
- Padding="20"
- Background="LightGoldenrodYellow"
- VerticalAlignment="Center"
- HorizontalAlignment="Center"
- MouseDown="lblSource_MouseDown"
- Content="Или эту метку" />
-        <Label Grid.Row="1"
- Grid.ColumnSpan="2"
- Background="LightGoldenrodYellow"
- VerticalAlignment="Center"
- HorizontalAlignment="Center"
- Padding="20"
- Content="На эту метку"
- AllowDrop="True"
- Drop="lblTarget_Drop"/>
-        <!--
- AllowDrop="True" - Разрешаем/запрещаем бросать что-либо в этот
-элемент.
- Drop="lblTarget_Drop" - Событие при броске в элемент чего-либо.
- -->
+       Title="Вариант 1" Height="300" Width="300">
+    <Grid>
+        <Grid>
+            <ListBox Name="list" Margin="0,0,0,167">
+                <ListBoxItem Content="Первый"/>
+                <ListBoxItem Content="Второй"/>
+                <ListBoxItem Content="Третий"/>
+                <ListBoxItem Content="Четвёртый"/>
+                <ListBoxItem Content="Пятый"/>
+            </ListBox>
+        </Grid>
+        <Grid Margin="0,104,0,0">
+            <ComboBox Height="30" VerticalAlignment="Top">
+                <TextBlock>Первый</TextBlock>
+                <TextBlock>Второй</TextBlock>
+                <TextBlock>Третий</TextBlock>
+                <TextBlock>Четвёртый</TextBlock>
+                <TextBlock>Пятый</TextBlock>
+            </ComboBox>
+        </Grid>
     </Grid>
 </Window>
