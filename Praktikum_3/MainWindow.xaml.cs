@@ -26,33 +26,23 @@ namespace Praktikum_3
             InitializeComponent();
         }
 
-        private void Rectangle_MouseMove(object sender, MouseEventArgs e)
+        private void lblSource_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            // Проверка состояния левой клавиши мыши.
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                // Получение координат мыши относительно объекта Rect.
-                Point currentMouse = e.GetPosition(Rect);
-                TextBlock1.Text = string.Format("x: {0} y:{1}", currentMouse.X,
-               currentMouse.Y);
-            }
+            // sender – объект, на котором произошло данное событие.
+            Label lbl = sender as Label;
+            // Создаем источник.
+            // Копируем содержимое метки Drop.
+            // 1 параметр: Элемент управления, который будет источником.
+            // 2 параметр: Данные, которые будут перемещаться.
+            // 3 параметр: Эффект при переносе.
+            DragDrop.DoDragDrop(lbl, lbl.Content, DragDropEffects.Copy);
         }
-        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs
-       e)
+        // Событие инициируется в момент бросания перетягиваемого элемента на целевой элемент.
+ private void lblTarget_Drop(object sender, DragEventArgs e)
         {
-            if (IsCaptureMouse.IsChecked == true)
-            {
-                // Захват мыши на объекте Rect.
-                Rect.CaptureMouse();
-            }
-        }
-        private void Rectangle_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            if (IsCaptureMouse.IsChecked == true)
-            {
-                // Освобождение мыши.
-                Rect.ReleaseMouseCapture();
-            }
+            // Считываем содержимое кэша Drag&Drop и указываем какой тип данных надо считать.
+            
+             ((Label)sender).Content = e.Data.GetData(DataFormats.Text);
         }
     }
 }

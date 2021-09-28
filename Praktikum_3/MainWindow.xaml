@@ -5,15 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
-       Title="Захват мыши" Height="350" Width="525">
-    <StackPanel>
-        <Rectangle Fill="LightBlue" Height="150" Name="Rect"
- MouseMove="Rectangle_MouseMove"
- MouseDown="Rectangle_MouseDown"
- MouseUp="Rectangle_MouseUp">
-        </Rectangle>
-        <CheckBox Content="Захват мыши" Margin="10"
-Name="IsCaptureMouse"></CheckBox>
-        <TextBlock Name="TextBlock1" Margin="10"></TextBlock>
-    </StackPanel>
+       Title="Drag &amp; Drop" Height="300" Width="300">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBox Padding="10"
+ VerticalAlignment="Center"
+ HorizontalAlignment="Center"
+ Text="Перетащите текст из этого поля ввода" />
+        <!--
+ В TextBox уже реализовано Drag&Drop текста.
+ -->
+        <Label Grid.Row="0"
+ Grid.Column="1"
+ Padding="20"
+ Background="LightGoldenrodYellow"
+ VerticalAlignment="Center"
+ HorizontalAlignment="Center"
+ MouseDown="lblSource_MouseDown"
+ Content="Или эту метку" />
+        <Label Grid.Row="1"
+ Grid.ColumnSpan="2"
+ Background="LightGoldenrodYellow"
+ VerticalAlignment="Center"
+ HorizontalAlignment="Center"
+ Padding="20"
+ Content="На эту метку"
+ AllowDrop="True"
+ Drop="lblTarget_Drop"/>
+        <!--
+ AllowDrop="True" - Разрешаем/запрещаем бросать что-либо в этот
+элемент.
+ Drop="lblTarget_Drop" - Событие при броске в элемент чего-либо.
+ -->
+    </Grid>
 </Window>
