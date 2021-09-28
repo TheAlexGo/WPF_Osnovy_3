@@ -5,21 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="331" Width="529">
+        Title="Настройка всплывающей подсказки (ToolTip)" Height="363" Width="398">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="background.jpg" Stretch="UniformToFill"/>
-        </Grid.Background>
-        <Button Width="100" Height="100" Margin="110,141,298,51"></Button>
-        <!--Opacity - свойство устанавливающее непрозрачность элемента. 1
-- полностью непрозрачный 0 - полностью прозрачный.-->
-        <Button Name="textBox"
- Width="200"
- Height="92"
- Opacity="0.5"
- Margin="175,73,132,127"
- Background="Red"
- Foreground="White">
-        </Button>
+        <!--
+ InitialShowDeley – задержка в миллисекундах, указывающая на то,
+через какой промежуток времени будет отображена подсказка.
+ ShowDuration – Сколько подсказка будет отображаться.
+ BetweenShowDelay – если пользователь в течении времени, которое
+указано в этом свойстве, наведет на другой указатель то подсказка появится
+без замедлений
+ ToolTip – Содержимое окна с подсказкой.
+ HasDropShadow – бросает ли подсказка тень.
+ ShowOnDisabled – отображать подсказку на отключенных
+элементах.
+ Placement, PlacementTarget, PlacementRectangle, HorizontalOffset,
+VerticalOffset - управление месторасположением подсказки.
+ -->
+        <StackPanel HorizontalAlignment="Stretch" Margin="80"
+Name="stackPanel1" VerticalAlignment="Stretch">
+            <Button Content="Простой Tooltip"
+ Height="23"
+ Name="button1"
+ ToolTip="Подсказка для кнопки" />
+            <Button Content="Простой Tooltip и задержка"
+ Height="23"
+ Name="button2"
+ ToolTipService.InitialShowDelay="1000"
+ ToolTipService.BetweenShowDelay="5000"
+ ToolTip="Подсказка с InitialShowDelay=1000 и
+BetweenShowDelay=5000"></Button>
+            <Button Height="23" Name="button3" Content="Кнопка с расширенной
+подсказкой">
+                <Button.ToolTip>
+                    <ToolTip HasDropShadow="False" Background="#AA22CCCC">
+                        <StackPanel>
+                            <TextBlock>Текст подсказки</TextBlock>
+                            <Image Source="smile.gif" Height="100"></Image>
+                        </StackPanel>
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Content="ToolTip и Offset" Height="23" Name="button4">
+                <Button.ToolTip>
+                    <ToolTip HorizontalOffset="10" VerticalOffset="20"
+Content="Offset"></ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button Content="Placement" Height="23" Name="button5">
+                <Button.ToolTip>
+                    <ToolTip Placement="Left" Content="Placement"></ToolTip>
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
