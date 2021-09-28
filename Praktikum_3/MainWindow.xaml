@@ -10,13 +10,13 @@
         <TextBlock Margin="10, 10, 10, 10" Height="20" VerticalAlignment="Top">Дата</TextBlock>
         <GroupBox Header="Варианты:" HorizontalAlignment="Left" Height="126" Margin="10,35,0,0" VerticalAlignment="Top" Width="274">
             <StackPanel>
-                <RadioButton Content="Системная дата" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
-                <RadioButton Content="Японии" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
-                <RadioButton Content="Америки" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
-                <RadioButton Content="Лондона" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Системное время" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Токио" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Чикаго" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
+                <RadioButton Content="Лондон" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
             </StackPanel>
         </GroupBox>
 
-        <TextBlock Name="TextBlockResult" TextWrapping="Wrap" Text="Время" Margin="10,180,10,67" TextAlignment="Center" Background="#FFFF6464" Foreground="White"/>
+        <TextBlock Name="TextBlockResult" TextWrapping="Wrap" Text="Время" Margin="10,180,10,67" TextAlignment="Center" Background="#FFFF6464" Foreground="White" Visibility="Hidden"/>
     </Grid>
 </Window>
