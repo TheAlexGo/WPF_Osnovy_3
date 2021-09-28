@@ -25,19 +25,5 @@ namespace Praktikum_3
         {
             InitializeComponent();
         }
-
-        // Обработчик наведения на объект Run.
-        private void run_MouseEnter(object sender, MouseEventArgs e)
-        {
-            // Делаем Popup видимым.
-            popLink.IsOpen = true;
-        }
-        // Переход по ссылке.
-        private void lnk_Click(object sender, RoutedEventArgs e)
-        {
-            string fileName = ((Hyperlink)sender).NavigateUri.ToString();
-            // Запускаем приложение, которое ассоциируется с файлом.
-            Process.Start(fileName);
-        }
     }
 }

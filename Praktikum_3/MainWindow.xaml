@@ -5,51 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
-        Title="Настройка всплывающей подсказки (Popup)" Height="300" Width="300">
-    <Grid Margin="10">
-        <TextBlock TextWrapping="Wrap">
- Этот текст показывает, как можно в TextBlock создать
- <!--Run - декорирует и форматирует текст.-->
- <Run TextDecorations="Underline" MouseEnter="run_MouseEnter">
- ссылку
- </Run>.
-        </TextBlock>
-        <!--
- Popup - Всплывающее окно как и ToolTip.
- Отличия от ToolTip:
- 1) Отображается и прячется Popup
- 2) Имеет свойство PopupAnimation.
- 3) Popup может принимать фокус, таким образом, в него можно
-помещать другие элементы управления.
- Свойства:
-StaysOpen - Оставлять открытым после открытия.
-Placement="Mouse" - относительно чего будет положение окна.
-PopupAnimation="Slide" - Тип анимация первого отображения.
-AllowsTransparency="True" - Поддержка прозрачности.
+        Title="ListBox Sample" Height="300" Width="300">
+    <!--Если в ListBox помещен объект производный от UIElement, то этот
+элемент визуализируется, иначе для объекта вызывается метод ToString() и
+полученная строка выводится как элемент списка
+SelectionMode - Режим выбора элементов в списке:
+Single - может быть выбран только один элемент.
+Multiple - может быть выбрано несколько элементов, при этом для того
+что бы произвести выбор или снять выбор нужно сделать левый клик по
+элементу.
+Extended - множественный выбор производится с зажатой клавишей Ctrl
+или Shift
  -->
-        <Popup Name="popLink"
-            StaysOpen="False"
-            Placement="Mouse"
-            MaxWidth="200"
-            PopupAnimation="Scroll"
-            AllowsTransparency="True">
-            <Border BorderThickness="3"
-                CornerRadius="3"
-                BorderBrush="#AA323232"
-                Background="#AA000000">
-                <TextBlock Margin="10" TextWrapping="Wrap" Foreground="White">
-                     Ссылка в текстовом блоке.
-                     <!--
-                     Hyperlink - ссылка.
-                     Свойство NavigateUri - содержит ссылку на ресурс.
-                     -->
-                     <Hyperlink Foreground="#009BFF"
-                     NavigateUri="http://en.wikipedia.org/wiki/Term"
-                     Click="lnk_Click">
-                     Wikipedia
-                    </Hyperlink>
-                </TextBlock>
-            </Border>
-        </Popup>
-    </Grid>
+    <ListBox Margin="5"
+ SelectionMode="Extended"
+ Name="lst">
+        <StackPanel Orientation="Horizontal">
+            <Image Source="1.png" Width="100" Height="64" />
+            <Label VerticalContentAlignment="Center" Content="Первый рисунок"
+/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Image Source="2.png" Width="100" Height="64" />
+            <Label VerticalContentAlignment="Center" Content="Второй рисунок"
+/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Image Source="3.png" Width="100" Height="64" />
+            <Label VerticalContentAlignment="Center" Content="Третий рисунок"
+/>
+        </StackPanel>
+    </ListBox>
 </Window>
