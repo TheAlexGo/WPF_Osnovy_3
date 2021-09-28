@@ -26,12 +26,33 @@ namespace Praktikum_3
             InitializeComponent();
         }
 
-        private void MouseMoved(object sender, MouseEventArgs e)
+        private void Rectangle_MouseMove(object sender, MouseEventArgs e)
         {
-            Point pt = e.GetPosition((UIElement)this); // Получение координат мыши, относительно передаваймого элемента.
-             lblInfo.Text =
-             String.Format(" ({0}; {1}) в оконных координатах.",
-             pt.X, pt.Y);
+            // Проверка состояния левой клавиши мыши.
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                // Получение координат мыши относительно объекта Rect.
+                Point currentMouse = e.GetPosition(Rect);
+                TextBlock1.Text = string.Format("x: {0} y:{1}", currentMouse.X,
+               currentMouse.Y);
+            }
+        }
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs
+       e)
+        {
+            if (IsCaptureMouse.IsChecked == true)
+            {
+                // Захват мыши на объекте Rect.
+                Rect.CaptureMouse();
+            }
+        }
+        private void Rectangle_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (IsCaptureMouse.IsChecked == true)
+            {
+                // Освобождение мыши.
+                Rect.ReleaseMouseCapture();
+            }
         }
     }
 }
