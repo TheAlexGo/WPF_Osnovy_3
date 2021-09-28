@@ -25,5 +25,13 @@ namespace Praktikum_3
         {
             InitializeComponent();
         }
+
+        private void MouseMoved(object sender, MouseEventArgs e)
+        {
+            Point pt = e.GetPosition((UIElement)this); // Получение координат мыши, относительно передаваймого элемента.
+             lblInfo.Text =
+             String.Format(" ({0}; {1}) в оконных координатах.",
+             pt.X, pt.Y);
+        }
     }
 }
