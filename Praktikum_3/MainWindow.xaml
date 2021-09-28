@@ -5,11 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
-        Title="Focus" Height="231" Width="274">
+        Title="Встраивание шрифтов в сборку" Height="77" Width="300">
     <Grid>
-        <StackPanel Margin="5">
-            <Button Margin="5" Padding="30" Name="cmdFocus">Focused</Button>
-            <Button Margin="5" Padding="30">Not Focused</Button>
-        </StackPanel>
+        <TextBox FontFamily="./#SNAP ITC" FontSize="20" Background="White" Foreground="#FFFF3A3A">This is embedded font</TextBox>
     </Grid>
 </Window>
