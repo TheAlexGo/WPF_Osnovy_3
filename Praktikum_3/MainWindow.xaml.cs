@@ -24,5 +24,16 @@ namespace Praktikum_3
         {
             InitializeComponent();
         }
+
+        private void txt_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            if (txtSelection == null)
+                return;
+            txtSelection.Text = String.Format("Выбрано с позиции {0}; количество символов == {1}; текст == \"{2}\"",
+                 txt.SelectionStart,
+                 txt.SelectionLength,
+                 txt.SelectedText
+             );
+        }
     }
 }
