@@ -5,31 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Praktikum_3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="331" Width="529">
     <Grid>
-        <StackPanel>
-            <!--RadioButton по умолчанию группируется контейнерами, но
-также,
- можно группировать эти элементы управления с помощью
-свойства GroupName-->
-            <GroupBox Margin="5" Padding="10" Header="Radiobutton Group 1">
-                <StackPanel>
-                    <RadioButton>Group 1</RadioButton>
-                    <RadioButton>Group 1</RadioButton>
-                    <RadioButton>Group 1</RadioButton>
-                    <RadioButton Margin="0,10,0,0"
- GroupName="Group2">Group 2</RadioButton>
-                </StackPanel>
-            </GroupBox>
-            <GroupBox Margin="5" Padding="10" Header="Radiobutton Group 2">
-                <StackPanel>
-                    <RadioButton>Group 3</RadioButton>
-                    <RadioButton>Group 3</RadioButton>
-                    <RadioButton>Group 3</RadioButton>
-                    <RadioButton Margin="0,10,0,0"
- GroupName="Group2">Group 2</RadioButton>
-                </StackPanel>
-            </GroupBox>
-        </StackPanel>
+        <Grid.Background>
+            <ImageBrush ImageSource="background.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <Button Width="100" Height="100" Margin="110,141,298,51"></Button>
+        <!--Opacity - свойство устанавливающее непрозрачность элемента. 1
+- полностью непрозрачный 0 - полностью прозрачный.-->
+        <Button Name="textBox"
+ Width="200"
+ Height="92"
+ Opacity="0.5"
+ Margin="175,73,132,127"
+ Background="Red"
+ Foreground="White">
+        </Button>
     </Grid>
 </Window>
